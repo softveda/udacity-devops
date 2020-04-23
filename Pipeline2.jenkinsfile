@@ -2,7 +2,7 @@ pipeline {
   agent any
   
   parameterS {
-    string(name: 'EKS_CLUSTER', defaultValue: 'basic-cluster-blue', description: 'EKS Cluster Name') }
+    string(name: 'EKS_CLUSTER', defaultValue: 'basic-cluster-blue', description: 'EKS Cluster Name')
   }
   
   environment {
