@@ -1,6 +1,10 @@
 pipeline {
   agent any
-
+  
+  parameterS {
+    string(name: 'EKS_CLUSTER', defaultValue: 'basic-cluster-blue', description: 'EKS Cluster Name') }
+  }
+  
   environment {
     APP_NAME = "demo_app"
   }
@@ -14,7 +18,7 @@ pipeline {
       steps {
         echo "Running Stage 1"
         echo "$JOB_NAME"
-        echo "$JOB_BASE_NAME"
+        echo "${params.EKS_CLUSTER}"
       }
     }
   }
