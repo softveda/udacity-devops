@@ -16,12 +16,20 @@ pipeline {
     
     stage('Run Pipeline 2') {
       steps {
-       build job: 'udacity-devops-pl2/master', parameters: [
+       build job: 'udacity-devops-pl2/$BRANCH_NAME', parameters: [
                 string(name: 'EKS_CLUSTER', value: "basic-cluster-green")
                 ],
                 propagate: true,
                 wait: true
+       echo "Pipeline 2 completed"
       }
     }
+    
+     stage('Stage 3') {
+      steps {
+        echo "Running Stage 3"
+      }
+    }
+    
   }
 }
