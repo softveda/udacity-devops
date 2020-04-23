@@ -8,9 +8,13 @@ pipeline {
   stages {
 
     stage('Stage 1') {
+      when {
+        expression {return $JOB_NAME ==~ "^udacity-devops-pl2"}
+      }
       steps {
         echo "Running Stage 1"
         echo "$JOB_NAME"
+        echo "$JOB_BASE_NAME"
       }
     }
   }
