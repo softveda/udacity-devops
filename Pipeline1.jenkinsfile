@@ -13,5 +13,13 @@ pipeline {
         echo "$JOB_NAME"
       }
     }
+    
+    stage('Run Pipeline 2') {
+      steps {
+       build job: 'udacity-devops-pl2', parameters: [
+                string(name: 'EKS_CLUSTER', value: "basic-cluster-green")
+                ]
+      }
+    }
   }
 }
