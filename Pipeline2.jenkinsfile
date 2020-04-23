@@ -9,7 +9,7 @@ pipeline {
 
     stage('Stage 1') {
       when {
-        expression {return env.JOB_NAME = "udacity-devops-pl2/master"}
+        expression { environment name: 'JOB_NAME', value: 'udacity-devops-pl2/master'}
       }
       steps {
         echo "Running Stage 1"
