@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+
+  environment {
+    APP_NAME = "demo_app"
+  }
+  
+  stages {
+
+    stage('Stage 1') {
+      steps {
+        echo "Running Stage 1"
+        echo "$JOB_NAME"
+      }
+    }
+  }
+}
